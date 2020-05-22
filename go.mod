@@ -16,11 +16,11 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5
 	github.com/vmware/govmomi v0.22.1
-	github.com/vmware/vsphere-automation-sdk-go/lib v0.1.1
-	github.com/vmware/vsphere-automation-sdk-go/runtime v0.1.1
-	github.com/vmware/vsphere-automation-sdk-go/services/nsxt v0.1.1
+	github.com/vmware/vsphere-automation-sdk-go/lib v0.2.0
+	github.com/vmware/vsphere-automation-sdk-go/runtime v0.2.0
+	github.com/vmware/vsphere-automation-sdk-go/services/nsxt v0.3.0
 	golang.org/x/lint v0.0.0-20200130185559-910be7a94367 // indirect
-	golang.org/x/net v0.0.0-20200114155413-6afb5195e5aa
+	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4 // indirect
 	golang.org/x/tools v0.0.0-20200301222351-066e0c02454c // indirect
 	google.golang.org/grpc v1.26.0
