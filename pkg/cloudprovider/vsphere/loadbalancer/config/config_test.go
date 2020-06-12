@@ -43,6 +43,8 @@ udpAppProfileName = udp2
 [NSX-T]
 user = admin
 password = secret
+userNE = ne
+passwordNE = secret-ne
 host = nsxt-server
 `
 	config, err := ReadConfig(strings.NewReader(contents))
@@ -73,6 +75,8 @@ host = nsxt-server
 	}
 	assertEquals("NSX-T.user", config.NSXT.User, "admin")
 	assertEquals("NSX-T.password", config.NSXT.Password, "secret")
+	assertEquals("NSX-T.userNE", config.NSXT.UserNE, "ne")
+	assertEquals("NSX-T.passwordNE", config.NSXT.PasswordNE, "secret-ne")
 	assertEquals("NSX-T.host", config.NSXT.Host, "nsxt-server")
 }
 
