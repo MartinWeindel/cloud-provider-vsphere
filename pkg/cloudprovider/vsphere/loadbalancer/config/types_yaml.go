@@ -67,6 +67,10 @@ type NsxtConfigYAML struct {
 	User string `yaml:"user"`
 	// NSX-T password in clear text.
 	Password string `yaml:"password"`
+	// NSX-T username for ip pool address allocation (with role `Network Engineer`). Only needed if `User` has role `LB Admin`
+	UserNE string `yaml:"userNE"`
+	// NSX-T password in clear text.
+	PasswordNE string `yaml:"passwordNE"`
 	// NSX-T host.
 	Host string `yaml:"host"`
 	// InsecureFlag is to be set to true if NSX-T uses self-signed cert.

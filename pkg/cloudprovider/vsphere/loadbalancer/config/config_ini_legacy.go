@@ -66,6 +66,8 @@ func (lbc *LBConfigINI) CreateConfig() *LBConfig {
 	//NSXT
 	cfg.NSXT.User = lbc.NSXT.User
 	cfg.NSXT.Password = lbc.NSXT.Password
+	cfg.NSXT.UserNE = lbc.NSXT.UserNE
+	cfg.NSXT.PasswordNE = lbc.NSXT.PasswordNE
 	cfg.NSXT.Host = lbc.NSXT.Host
 	cfg.NSXT.InsecureFlag = lbc.NSXT.InsecureFlag
 	cfg.NSXT.RemoteAuth = lbc.NSXT.RemoteAuth

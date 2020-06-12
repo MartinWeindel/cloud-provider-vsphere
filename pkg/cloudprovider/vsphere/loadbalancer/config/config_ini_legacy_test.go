@@ -47,6 +47,8 @@ udp-app-profile-name = udp2
 [NSXT]
 user = admin
 password = secret
+user-ne = ne
+password-ne = secret-ne
 host = nsxt-server
 `
 	config, err := ReadRawConfigINI([]byte(contents))
@@ -75,9 +77,11 @@ host = nsxt-server
 	if len(config.LoadBalancer.AdditionalTags) != 2 || config.LoadBalancer.AdditionalTags["tag1"] != "value1" || config.LoadBalancer.AdditionalTags["tag2"] != "value 2" {
 		t.Errorf("unexpected additionalTags %v", config.LoadBalancer.AdditionalTags)
 	}
-	assertEquals("NSXT.user", config.NSXT.User, "admin")
-	assertEquals("NSXT.password", config.NSXT.Password, "secret")
-	assertEquals("NSXT.host", config.NSXT.Host, "nsxt-server")
+	assertEquals("NSX-T.user", config.NSXT.User, "admin")
+	assertEquals("NSX-T.password", config.NSXT.Password, "secret")
+	assertEquals("NSX-T.userNE", config.NSXT.UserNE, "ne")
+	assertEquals("NSX-T.passwordNE", config.NSXT.PasswordNE, "secret-ne")
+	assertEquals("NSX-T.host", config.NSXT.Host, "nsxt-server")
 }
 
 func TestReadINIConfigOnVMC(t *testing.T) {

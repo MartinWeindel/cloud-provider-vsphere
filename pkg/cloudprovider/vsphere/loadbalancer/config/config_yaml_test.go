@@ -49,6 +49,8 @@ loadBalancerClass:
 nsxt:
   user: admin
   password: secret
+  userNE: ne
+  passwordNE: secret-ne
   host: nsxt-server
 `
 	config, err := ReadRawConfigYAML([]byte(contents))
@@ -79,6 +81,8 @@ nsxt:
 	}
 	assertEquals("nsxt.user", config.NSXT.User, "admin")
 	assertEquals("nsxt.password", config.NSXT.Password, "secret")
+	assertEquals("nsxt.user", config.NSXT.UserNE, "ne")
+	assertEquals("nsxt.password", config.NSXT.PasswordNE, "secret-ne")
 	assertEquals("nsxt.host", config.NSXT.Host, "nsxt-server")
 }
 

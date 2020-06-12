@@ -49,6 +49,10 @@ type NsxtConfigINI struct {
 	User string `gcfg:"user"`
 	// NSX-T password in clear text.
 	Password string `gcfg:"password"`
+	// NSX-T username for ip pool address allocation (with role `Network Engineer`). Only needed if `User` has role `LB Admin`
+	UserNE string `gcfg:"user-ne"`
+	// NSX-T password in clear text.
+	PasswordNE string `gcfg:"password-ne"`
 	// NSX-T host.
 	Host string `gcfg:"host"`
 	// InsecureFlag is to be set to true if NSX-T uses self-signed cert.

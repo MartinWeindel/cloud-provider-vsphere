@@ -48,6 +48,10 @@ type NsxtConfig struct {
 	User string
 	// NSX-T password in clear text.
 	Password string
+	// NSX-T username for ip pool address allocation (with role `Network Engineer`). Only needed if `User` has role `LB Admin`
+	UserNE string
+	// NSX-T password in clear text.
+	PasswordNE string
 	// NSX-T host.
 	Host string
 	// InsecureFlag is to be set to true if NSX-T uses self-signed cert.
