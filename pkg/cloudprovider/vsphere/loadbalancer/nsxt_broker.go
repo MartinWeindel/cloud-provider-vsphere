@@ -170,7 +170,14 @@ func createConnector(nsxtConfig *config.NsxtConfig, user, password, suffix strin
 	}
 
 	// perform API call to check connector
-	_, err = infra.NewDefaultLbMonitorProfilesClient(connector).List(nil, nil, nil, nil, nil, nil)
+	switch suffix {
+	case "":
+		// API call allowed for LBAdmin role
+		_, err = infra.NewDefaultLbMonitorProfilesClient(connector).List(nil, nil, nil, nil, nil, nil)
+	case "NE":
+		// API call allowed for Network Enginer role
+		_, err = infra.NewDefaultIpPoolsClient(connector).List(nil, nil, nil, nil, nil, nil)
+	}
 	if err != nil {
 		return nil, false, errors.Wrapf(err, "Connection to NSX-T API failed for 'user%s'. Please check your connection settings.", suffix)
 	}
